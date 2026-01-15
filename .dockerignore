@@ -1,0 +1,5 @@
+# Di folder repository Anda
+echo "deobfuscator/" > .dockerignore
+echo ".git/" >> .dockerignore
+echo "*.pyc" >> .dockerignore
+echo "__pycache__/" >> .dockerignore
