@@ -1,34 +1,21 @@
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 class Config:
-    # Discord Bot Settings
     DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
     BOT_PREFIX = os.getenv('BOT_PREFIX', '!')
     
-    # Application Settings
-    DEOBFUSCATOR_PATH = '/app/deobfuscator'
+    # Updated path
+    DEOBFUSCATOR_PATH = '/app/prometheus-deob'
+    
     UPLOAD_FOLDER = '/app/uploads'
     OUTPUT_FOLDER = '/app/outputs'
     SNAPSHOT_FOLDER = '/app/snapshots'
-    LOG_FOLDER = '/app/logs'
-    
-    # Limits
-    MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
-    MAX_CODE_LENGTH = 500000  # 500k characters
-    DEOB_TIMEOUT = 300  # 5 minutes
+    MAX_FILE_SIZE = 5 * 1024 * 1024
+    MAX_CODE_LENGTH = 500000
+    DEOB_TIMEOUT = 300
     COOLDOWN_SECONDS = 30
-    
-    # Web Server
     WEB_PORT = int(os.getenv('PORT', 10000))
-    
-    # Allowed Channels (empty = all channels allowed)
-    ALLOWED_CHANNELS = os.getenv('ALLOWED_CHANNELS', '').split(',')
-    
-    # Admin User IDs
-    ADMIN_IDS = os.getenv('ADMIN_IDS', '').split(',')
+    ADMIN_IDS = [x.strip() for x in os.getenv('ADMIN_IDS', '').split(',') if x.strip()]
     
     # Trace mode descriptions
     TRACE_MODES = {
