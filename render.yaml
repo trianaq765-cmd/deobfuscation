@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: prometheus-deobfuscator
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: BOT_PREFIX
+        value: "!"
+      - key: ADMIN_IDS
+        sync: false
+      - key: ALLOWED_CHANNELS
+        value: ""
+    healthCheckPath: /health
+    plan: starter
