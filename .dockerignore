@@ -1,5 +1,8 @@
-# Di folder repository Anda
-echo "deobfuscator/" > .dockerignore
-echo ".git/" >> .dockerignore
-echo "*.pyc" >> .dockerignore
-echo "__pycache__/" >> .dockerignore
+# .dockerignore
+deobfuscator/
+.git/
+.gitignore
+README.md
+*.pyc
+__pycache__/
+.env
